@@ -1,5 +1,5 @@
 const { window } = require('vscode');
-const { isValidIndexFile, getParentDirectoryForIndex } = require('./util');
+const { isValidIndexFile, getNewFileName } = require('./util');
 
 /**
  * @description rename index files to parent directory names
@@ -9,11 +9,11 @@ function renameTab() {
 
   if (window.activeTextEditor && isValidIndexFile(activeEditor.document)) {
     const fileName = activeEditor.document.fileName;
-    const newFileName = getParentDirectoryForIndex(fileName);
+    const newFileName = getNewFileName(fileName);
 
-    console.log(activeEditor);
-
-    window.showInformationMessage(`'vs-nice-index' should change name '${newFileName}'`);
+    window.showInformationMessage(`'vs-nice-index' should rename tab to '${newFileName}'
+      Unforturnately, 'fileName' is currently immutable 😔. This extension will be updated once there is a way to set the 'fileName' for the 'activeTextEditor' 🙂.
+    `);
   }
 }
 
