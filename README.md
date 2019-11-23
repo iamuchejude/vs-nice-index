@@ -59,4 +59,8 @@ This way, we get the best of both worlds. We get semantically meaningful tab nam
 ## Author
 This project was written by [Uche Jude][https://twitter.com/iamuchejude] for the community.
 
+### Contributors
+
+Adenekan Wonderful [Visit Page](https://github.com/adenekan41)
+
 **Enjoy!**
