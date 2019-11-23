@@ -1,66 +1,63 @@
-# vs-nice-index README
+# vs-nice-index [WIP]
 
-This is the README for your extension "vs-nice-index". After writing up a brief description, we recommend including the following sections.
+`vs-nice-index` is a `VS Code` extension that renames `index.js` files to their `parent` directory names.
 
-## Features
+```
+about/index.html  -> /about
+Home/index.jsx    -> /Home
+server/index.js   -> /server
+```
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+## Why
 
-For example if there is an image subfolder under your extension project workspace:
+It's common practice, in web development, to give your directories semantically-relevant names, but to give the primary file the name of `index.js`, `index.html`, `index.css`, etc.
 
-\!\[feature X\]\(images/feature-x.png\)
+Web servers like apache will, by default, automatically try and serve index.html or index.php files when you request a directory. So, `http://www.google.com/` will attempt to serve `http://www.google.com/index.html`. This allows us to hide the file extension from the user, and provide nicer URLs.
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+In Node.js and ES2015 Javascript imports, this same convention was adopted. You can `require` or `import` a path like `/components/Home`, and it will attempt to find an `index.*` file within it.
 
-## Requirements
+The end result is that a lot of projects are packed with files like `index.js`, `index.html`, `index.css`, etc. Here's an example structure from a React app:
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+```
+.
+├── components
+|   ├── Home
+|   |   ├── index.jsx
+|   |   └── index.css
+|   ├── Header
+|   |   ├── index.jsx
+|   |   └── index.css
+|   └── Footer
+|   |   ├── index.jsx
+|   |   └── index.css
+├── server
+|   └── index.js
+└── index.html
+```
 
-## Extension Settings
+In VS Code, this means your files will look something like this:
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+![Sample pane files](/assets/before.png "Before")
 
-For example:
+This is not good! All the filenames are the same. VS Code tries to be helpful by showing the directory name after the filename, but when you have more than a couple of files open, that stuff all gets hidden.
 
-This extension contributes the following settings:
+### There must be a better way...
 
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+Wouldn't it be nicer if, for all `index.*` files, we just showed the parent directory? Something like:
 
-## Known Issues
+![Better pane files](/assets/after.png "After")
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+This way, we get the best of both worlds. We get semantically meaningful tab names in VS Code while developing, and we can still reap all the benefits of using the index.* convention.  
 
-## Release Notes
+## Similar Projects
+- [nice-index](https://github.com/joshwcomeau/nice-index) for `Atom Editor` by [Joshua Comeau](https://twitter.com/JoshWComeau)
 
-Users appreciate release notes as you update your extension.
+## Credit and Acknoledgement
+- `README` file is an edited clone of [Joshua Comeau](https://twitter.com/JoshWComeau)'s [nice-index](https://github.com/joshwcomeau/nice-index)  
 
-### 1.0.0
 
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+## Author
+This project was written by [Uche Jude][https://twitter.com/iamuchejude] for the community.
 
 ### Contributors
 
