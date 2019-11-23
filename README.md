@@ -1,4 +1,4 @@
-# vs-nice-index [WIP]
+![Sample pane files](/assets/logo.png "Before")
 
 `vs-nice-index` is a `VS Code` extension that renames `index.js` files to their `parent` directory names.
 
@@ -54,13 +54,11 @@ This way, we get the best of both worlds. We get semantically meaningful tab nam
 
 ## Credit and Acknoledgement
 - `README` file is an edited clone of [Joshua Comeau](https://twitter.com/JoshWComeau)'s [nice-index](https://github.com/joshwcomeau/nice-index)  
+- Logo Designer: [Adenekan Wonderful](https://github.com/adenekan41)
 
 
-## Author
-This project was written by [Uche Jude][https://twitter.com/iamuchejude] for the community.
-
-### Contributors
-
-Adenekan Wonderful [Visit Page](https://github.com/adenekan41)
+## Author & Contributors
+* [Uche Jude](https://github.com/iamuchejude)
+* [Adenekan Wonderful](https://github.com/adenekan41)
 
 **Enjoy!**
