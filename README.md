@@ -1,6 +1,6 @@
 ![Sample pane files](/assets/logo.png "Before")
 
-`vs-nice-index` is a `VS Code` extension that renames `index.js` files to their `parent` directory names.
+> `vs-nice-index` is a `VS Code` extension that renames `index.js` files to their `parent` directory names.
 
 ```
 about/index.html  -> /about
